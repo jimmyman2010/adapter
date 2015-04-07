@@ -52,7 +52,12 @@ body{
     color: #353C41;
     font-weight: 300;
 }
-
+.centered{
+    text-align: center;
+}
+.align-right{
+    text-align: right;
+}
 .button, button {
     @include border-radius(rem-calc(5));
     border-style: solid;
@@ -164,6 +169,9 @@ label{
     .portlet-body{
         .row{
             margin-top: rem-calc(5);
+            &:first-child{
+                margin-top: rem-calc(14);
+            }
         }
     }
 }
