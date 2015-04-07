@@ -1,0 +1,13 @@
+{
+    "name": "adapter",
+    "description": "Adapter project",
+    "dependencies": {
+        "grunt": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-compass": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-watch": "*",
+        "grunt-contrib-csslint": "*",
+        "grunt-contrib-cssmin": "*"
+    }
+}
