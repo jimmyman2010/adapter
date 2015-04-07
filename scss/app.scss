@@ -55,9 +55,6 @@ body{
 .align-center{
     text-align: center;
 }
-.align-right{
-    text-align: right;
-}
 .button, button {
     @include border-radius(rem-calc(5));
     border-style: solid;
@@ -292,5 +289,11 @@ label{
         @include border-radius(rem-calc(5));
         padding: rem-calc(15);
         font-size: rem-calc(15);
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .align-right{
+        text-align: right;
+        padding-right: 0;
     }
 }
