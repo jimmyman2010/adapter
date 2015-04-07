@@ -75,6 +75,7 @@ body{
     transition: background 300ms ease-out;
     font-weight: 400;
     text-transform: uppercase;
+    min-width: rem-calc(100);
     &.round{
         @include border-radius(rem-calc(1000));
     }
@@ -106,9 +107,23 @@ body{
     &.small{
         padding: rem-calc(6) rem-calc(13);
         font-size: rem-calc(12);
+        min-width: rem-calc(50);
     }
 }
-
+select {
+    background-color: #FAFAFA;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: normal;
+    padding: 0.44444rem;
+    height: 2.05556rem;
+    margin: 0 0 .88889rem;
+    @include border-radius(rem-calc(5));
+}
 input[type="text"],
 input[type="password"],
 input[type="date"],
@@ -123,7 +138,6 @@ input[type="tel"],
 input[type="time"],
 input[type="url"],
 input[type="color"],
-section,
 textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -171,6 +185,9 @@ label{
             margin-top: rem-calc(5);
             &:first-child{
                 margin-top: rem-calc(14);
+            }
+            .row{
+                margin-top: 0;
             }
         }
     }
