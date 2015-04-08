@@ -1,0 +1,28 @@
+.portlet{
+    .portlet-title{
+        position: relative;
+        border-bottom: 1px solid #ccc;
+        h3{
+            font-size: rem-calc(20);
+            color: #697882;
+            padding: 20px 0 5px;
+            font-weight: 400;
+        }
+        .button-group{
+            position: absolute;
+            right: 0;
+            top: rem-calc(8);
+        }
+    }
+    .portlet-body{
+        .row{
+            margin-top: rem-calc(5);
+            &:first-child{
+                margin-top: rem-calc(14);
+            }
+            .row{
+                margin-top: 0;
+            }
+        }
+    }
+}
