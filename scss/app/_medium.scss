@@ -1,11 +1,75 @@
 @media only screen and (min-width: 40.063em) {
-    .information{
+    .site-header {
+        .banner{
+            a{
+                display: block;
+                margin-top: rem-calc(5);
+            }
+        }
+    }
+  .information{
         padding-left: 0;
     }
 }
 
-@media only screen and (max-width: 64.063em) {
+@media only screen and (max-width: 64em) {
+    .dropdown-show, .dropdown-hide {
+        @include transform-origin(50%, 0%);
+    }
+
+    .dropdown-show {
+        display: block;
+        max-height: 9999px;
+        @include transform(scaleY(1));
+        @include animation(showAnimation .5s ease-in-out);
+        @include transition(max-height 1s ease-in-out);
+    }
+
+    .dropdown-hide {
+        max-height: 0;
+        @include transform(scaleY(0));
+        @include animation(hideAnimation .4s ease-out);
+        @include transition(max-height .6s ease-out);
+    }
     .information{
         padding-left: 0;
+    }
+}
+@include keyframes(showAnimation) {
+    0% {
+        @include transform(scaleY(0.1));
+    }
+    40% {
+        @include transform(scaleY(1.04));
+    }
+    60% {
+        @include transform(scaleY(0.98));
+    }
+    80% {
+        @include transform(scaleY(1.04));
+    }
+    100% {
+        @include transform(scaleY(0.98));
+    }
+    80% {
+        @include transform(scaleY(1.02));
+    }
+    100% {
+        @include transform(scaleY(1));
+    }
+}
+
+@include keyframes(hideAnimation) {
+    0% {
+        @include transform(scaleY(1));
+    }
+    60% {
+        @include transform(scaleY(0.98));
+    }
+    80% {
+        @include transform(scaleY(1.02));
+    }
+    100% {
+        @include transform(scaleY(0));
     }
 }

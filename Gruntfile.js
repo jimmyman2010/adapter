@@ -1,8 +1,21 @@
 'use strict';
 module.exports = function (grunt) {
     grunt.initConfig({
-        // Tasks go here
+        jshint: {
+            app: ['js/app.js']
+        },
+        uglify: {
+            dev: {
+                files: {
+                    'js/app.min.js': ['js/app.js']
+                }
+            }
+        },
         watch: {
+            js: {
+                files: ['js/*.js'],
+                tasks: ['jshint', 'uglify']
+            },
             css: {
                 files: ['scss/*.scss', 'scss/*/*.scss', 'scss/*/*/*.scss'],
                 tasks: ['compass', 'cssmin']
@@ -34,6 +47,8 @@ module.exports = function (grunt) {
     // Do the same for compass and other tasks.
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['compass', 'cssmin']);
+    grunt.registerTask('default', ['jshint', 'uglify', 'compass', 'cssmin']);
 };

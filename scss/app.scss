@@ -4,7 +4,8 @@
 @import "compass/css3";
 
 a{
-   text-decoration: none;
+    color: #40C0E8;
+    text-decoration: none;
 }
 p{
     margin: 0;
@@ -69,14 +70,45 @@ body{
             }
         }
     }
+    .copyright{
+        font-size: rem-calc(12);
+        color: #000;
+        font-weight: 400;
+        text-align: center;
+        a{
+            font-weight: 700;
+        }
+    }
 }
 .site-header{
     background: #40C0E8;
     color: #525252;
     border-bottom: 1px solid #e9ecf3;
     @include clearfix();
-    .logo img{
-        margin-top: rem-calc(6);
+    .logo {
+        img {
+            margin-top: rem-calc(6);
+        }
+        .toggle-menu{
+            float: right;
+            padding: rem-calc(8);
+            margin:rem-calc(15) 0;
+            @include border-radius(rem-calc(5));
+            border: 1px solid transparent;
+            &:hover{
+                border-color: #fff;
+            }
+            span{
+                width: rem-calc(20);
+                height: rem-calc(2);
+                background: #fff;
+                display: block;
+                margin-top: rem-calc(4);
+                &:first-child{
+                    margin-top: 0;
+                }
+            }
+        }
     }
     .banner{
         background: #fff;
@@ -84,11 +116,12 @@ body{
             font-weight: 700;
             color: #525252;
             font-size: rem-calc(30);
-            line-height: rem-calc(64);
+            line-height: rem-calc(30);
+            display: none;
         }
         em{
             float: right;
-            margin-top: rem-calc(40);
+            margin-top: rem-calc(5);
         }
     }
 }
