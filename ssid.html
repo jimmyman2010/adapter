@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>System tools</title>
+    <title>Status page</title>
 
     <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,700' rel='stylesheet' type='text/css'>
     <link href="css/app.min.css" rel="stylesheet" type="text/css" />
@@ -30,9 +30,9 @@
             <ul>
                 <li class="item-group">System</li>
                 <li><a href="index.html">Status</a></li>
-                <li><a href="ssid.html">SSID1</a></li>
+                <li class="active"><a href="ssid.html">SSID1</a></li>
                 <li><a href="ssid.html">SSID2</a></li>
-                <li class="active"><a href="wan-lan.html">WAN & LAN</a></li>
+                <li><a href="wan-lan.html">WAN & LAN</a></li>
                 <li><a href="system-tools.html">Tools</a></li>
                 <li class="item-group">Users</li>
                 <li><a href="landing-page.html">Landing page</a></li>
@@ -42,44 +42,40 @@
             <div class="content">
                 <div class="portlet">
                     <div class="portlet-title">
-                        <h3>WAN Setting</h3>
+                        <h3>Wireless Settings</h3>
                     </div>
                     <div class="portlet-body">
                         <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">WAN Connection Type</label>
+                            <label class="large-3 large-offset-1 medium-5 columns">SSID Name</label>
+                            <div class="large-4 medium-7 columns">
+                                <input type="text" value="SSID 1 Name" />
+                            </div>
+                            <div class="large-4 columns"></div>
+                        </div>
+                        <div class="row control-group">
+                            <label class="large-3 large-offset-1 medium-5 columns">Mode</label>
                             <div class="large-4 medium-7 columns">
                                 <select>
-                                    <option>Static IP</option>
-                                    <option>Dynamic IP</option>
+                                    <option>11b.g.n</option>
+                                    <option>11b.g</option>
                                 </select>
                             </div>
                             <div class="large-4 columns"></div>
                         </div>
                         <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">IP Address</label>
+                            <label class="large-3 large-offset-1 medium-5 columns">Channel</label>
                             <div class="large-4 medium-7 columns">
-                                <input type="text" value="0.0.0.0" />
+                                <input type="text" value="11" />
                             </div>
                             <div class="large-4 columns"></div>
                         </div>
                         <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Subnet Mask</label>
+                            <label class="large-3 large-offset-1 medium-5 columns">Max TX Rate</label>
                             <div class="large-4 medium-7 columns">
-                                <input type="text" value="0.0.0.0" />
-                            </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Default Gateway</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="0.0.0.0" />
-                            </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">DNS</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="0.0.0.0" />
+                                <select>
+                                    <option>300</option>
+                                    <option>500</option>
+                                </select>
                             </div>
                             <div class="large-4 columns"></div>
                         </div>
@@ -87,32 +83,7 @@
                 </div>
                 <div class="portlet">
                     <div class="portlet-title">
-                        <h3>WAN Setting</h3>
-                    </div>
-                    <div class="portlet-body">
-                        <div class="row">
-                            <label class="large-3 large-offset-1 small-6 medium-5 columns">WAN Connection Type</label>
-                            <div class="large-8 small-6 medium-7 columns">AD:F1:CA:F2:AD</div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">IP Address</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="192.168.1.12" />
-                            </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Subnet Mask</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="255.255.255.0" />
-                            </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="portlet">
-                    <div class="portlet-title">
-                        <h3>DNS Setting</h3>
+                        <h3>Security</h3>
                     </div>
                     <div class="portlet-body">
                         <div class="row">
@@ -120,56 +91,50 @@
                             <div class="large-8 medium-7 columns">
                                 <div class="row">
                                     <div class="large-2 small-4 columns">
-                                        <input type="radio" value="0" name="enable" /> No
+                                        <input type="radio" onclick="javascript:enableSecurity(false);" value="0" name="enable-security" checked="checked" /> No
                                     </div>
                                     <div class="large-2 small-4 columns">
-                                        <input type="radio" value="1" name="enable" /> Yes
+                                        <input type="radio" onclick="javascript:enableSecurity(true);" value="1" name="enable-security" /> Yes
                                     </div>
                                     <div class="large-8 small-4"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Start IP Address</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="192.168.1.100" />
+                        <div id="enable-security" class="hide">
+                            <div class="row control-group">
+                                <label class="large-3 large-offset-1 medium-5 columns">Version</label>
+                                <div class="large-4 medium-7 columns">
+                                    <select>
+                                        <option>WPA1-PSK</option>
+                                        <option>WPA2-PSK</option>
+                                    </select>
+                                </div>
+                                <div class="large-4 columns"></div>
                             </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">End IP Address</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="192.168.1.200" />
+                            <div class="row control-group">
+                                <label class="large-3 large-offset-1 medium-5 columns">Max TX Rate</label>
+                                <div class="large-4 medium-7 columns">
+                                    <select>
+                                        <option>AES</option>
+                                        <option>BES</option>
+                                    </select>
+                                </div>
+                                <div class="large-4 columns"></div>
                             </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Subnet Mask</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="255.255.255.0" />
+                            <div class="row control-group">
+                                <label class="large-3 large-offset-1 medium-5 columns">Password</label>
+                                <div class="large-4 medium-7 columns">
+                                    <input type="password" value="12345678" />
+                                </div>
+                                <div class="large-4 columns"></div>
                             </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Lease time</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="2880" />
+                            <div class="row control-group">
+                                <label class="large-3 large-offset-1 medium-5 columns">Confirm Password</label>
+                                <div class="large-4 medium-7 columns">
+                                    <input type="password" value="12345678" />
+                                </div>
+                                <div class="large-4 columns"></div>
                             </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">Default Gateway</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="192.168.1.1" />
-                            </div>
-                            <div class="large-4 columns"></div>
-                        </div>
-                        <div class="row control-group">
-                            <label class="large-3 large-offset-1 medium-5 columns">DNS</label>
-                            <div class="large-4 medium-7 columns">
-                                <input type="text" value="8.8.8.8" />
-                            </div>
-                            <div class="large-4 columns"></div>
                         </div>
                         <div class="row align-center">
                             <button type="button">Save</button>
